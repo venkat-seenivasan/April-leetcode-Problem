@@ -1,0 +1,28 @@
+Reverse Words in a String
+
+link -->https://leetcode.com/problems/reverse-words-in-a-string/
+
+class Solution {
+    public String reverseWords(String s) {
+        String res = "";
+        res = res + s.charAt(0);
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == ' ' && s.charAt(i - 1) == ' ') {
+                res = res + "";
+            } else {
+                res = res + s.charAt(i);
+            }
+        }
+        res = res.trim();
+
+        String fin[] = res.split(" ");
+        String ans = "";
+        for (int i = fin.length - 1; i >= 0; i--) {
+            ans = ans + fin[i];
+            if (i != 0) {
+                ans = ans + " ";
+            }
+        }
+        return ans;
+    }
+}
